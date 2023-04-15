@@ -2,6 +2,8 @@ const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
+const audio = new Audio('./media/nhacchuong.mp3');
+
 
 let gameOver = false;
 let foodX, foodY;
@@ -26,6 +28,7 @@ const updateFoodPosition = () => {
 
 const handleGameOver = () => {
     clearInterval(setIntervalId);
+    audio.play();
     alert("Game Over!");
     location.reload();
 }
